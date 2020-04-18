@@ -3,9 +3,7 @@ import api from "@/api";
 
 export default Vuex.createStore({
   state: {
-    data: {
-      clima: "chuva",
-    },
+    data: null,
   },
   mutations: {
     setData(state, data) {

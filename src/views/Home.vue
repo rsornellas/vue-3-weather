@@ -1,5 +1,5 @@
 <template>
-    <Tempo :data="data" :getFn="getData" />
+  <Tempo v-if="data" :data="data" />
 </template>
 
 <script>
@@ -13,9 +13,10 @@ export default {
   },
   setup() {
     const store = useStore();
+    store.dispatch("getData");
+
     return {
       data: computed(() => store.state.data),
-      getData: () => store.dispatch("getData")
     };
   },
 };

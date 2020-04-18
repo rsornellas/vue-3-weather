@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="condition"
     class="box"
     :class="condition === 'cloudly_days' || 'cloudly_night' ? 'cloud' : 'warm'"
   >
@@ -25,20 +26,14 @@ export default {
     data: {
       type: Object,
     },
-    getFn: {
-      type: Function,
-    },
   },
   setup(props) {
-    props.getFn();
-
     return {
       city: computed(() => props.data.weatherData.data.results.city),
       temp: computed(() => props.data.weatherData.data.results.temp),
       condition: computed(
         () => props.data.weatherData.data.results.condition_slug
       ),
-      humidity: computed(() => props.data.weatherData.data.results.humidity),
       wind: computed(() => props.data.weatherData.data.results.wind_speedy),
       date: computed(() => props.data.weatherData.data.results.date),
     };
