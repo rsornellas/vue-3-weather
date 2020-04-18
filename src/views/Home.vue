@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <Tempo :data="data" :getFn="getData" />
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Tempo from "@/components/Tempo.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
 
 export default {
-  name: "Home",
   components: {
-    HelloWorld
-  }
+    Tempo,
+  },
+  setup() {
+    const store = useStore();
+    return {
+      data: computed(() => store.state.data),
+      getData: () => store.dispatch("getData")
+    };
+  },
 };
 </script>

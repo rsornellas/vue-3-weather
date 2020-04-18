@@ -1,11 +1,22 @@
-import Vue from "vue";
 import Vuex from "vuex";
+import api from "@/api";
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {}
+export default Vuex.createStore({
+  state: {
+    data: {
+      clima: "chuva",
+    },
+  },
+  mutations: {
+    setData(state, data) {
+      state.data = data;
+    },
+  },
+  actions: {
+    getData: async ({ commit }) => {
+      const data = await api.getData();
+      commit("setData", data);
+    },
+  },
+  modules: {},
 });
