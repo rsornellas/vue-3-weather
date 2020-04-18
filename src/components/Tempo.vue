@@ -46,7 +46,6 @@ export default {
   .box {
     margin: 100px auto auto auto;
     border-radius: 30px;
-    padding-top: 120px !important;
     border: 2px solid grey;
   }
 
@@ -58,7 +57,7 @@ export default {
 }
 
 .box {
-  padding: 50px 10px 50px 10px;
+  padding: 150px 10px 50px 10px;
   height: 667px;
   width: 375px;
 }
