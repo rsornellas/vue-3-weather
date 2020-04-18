@@ -1,4 +1,11 @@
-# futures
+# Vue 3 Weather
+
+Projeto simples para conhecer a versão 3 do Vue.
+Através do seu IP é consultada sua geolocalização e ixibida a previsão do tempo no momento,
+a imagem de fundo do App altera de acordo com a previsão.
+
+Api utilizada: https://hgbrasil.com/
+Para rodar local vc precisa de uma key.
 
 ## Project setup
 ```
