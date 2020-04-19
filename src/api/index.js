@@ -11,11 +11,11 @@ const instance = axios.create({
 const getData = async () => {
   try {
     const geoInfos = await instance.get(
-      "https://api.hgbrasil.com/geoip?format=json-cors&key=594e0feb&address=remote&precision=false"
+      "https://api.hgbrasil.com/geoip?format=json-cors&key=xxxxx&address=remote&precision=false"
     );
 
     const weatherData = await instance.get(
-      `https://api.hgbrasil.com/weather?format=json-cors&key=594e0feb&woeid=${geoInfos.data.results.woeid}`
+      `https://api.hgbrasil.com/weather?format=json-cors&key=xxxxxb&woeid=${geoInfos.data.results.woeid}`
     );
 
     return {
